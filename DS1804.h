@@ -12,7 +12,6 @@
 #define DS1804_LIB_VERSION               (F("0.1.0"))
 
 
-
 class DS1804
 {
 public:

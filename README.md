@@ -77,10 +77,12 @@ Duration of moveUp/Down depends linearly on n, expect less than half a milliseco
 ### EEPROM power up value
 
 - **void saveEEPROM()** saves the current position to internal EEPROM.
-The library cannot read this EEPROM value.
+Note the library cannot read this EEPROM value.
 
 To set a value for sure, you might go 100x down and P times up to get 
 at the requested position.
+
+See **DS1804_save_EEPROM.ino**
 
 
 ## Future
@@ -92,8 +94,9 @@ at the requested position.
 
 #### Should
 
-- array example.
-- default true for select?
+- array example  (sharing UD, INC pins, unique CS)
+- stereo example, (sharing all pins).
+- default true for select() / begin()?
 
 #### Could
 
