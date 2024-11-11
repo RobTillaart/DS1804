@@ -38,7 +38,8 @@ On power-down, the wiper position register data will be lost.
 On the next device power-up, the value of
 EEPROM memory will be loaded into the wiper position register.
 
-There is no factory default.
+There is no defined factory default, expect the value to be  random.
+
 
 ### Related
 
@@ -69,8 +70,8 @@ default the device is not selected.
 ### Base
 
 - **void select(bool b)** enable / disable device.
-- **void moveUp(uint8_t n = 1)** if enabled move R up (n is clipped to 0..100)
-- **void moveDown(uint8_t n = 1)** if enabled move R down (n is clipped to 0..100)
+- **void moveUp(uint8_t n = 1)** if enabled move position n steps up (n is clipped to 0..100)
+- **void moveDown(uint8_t n = 1)** if enabled move position n steps down (n is clipped to 0..100)
 
 Duration of moveUp/Down depends linearly on n, expect less than half a millisecond.
 
@@ -96,9 +97,10 @@ See **DS1804_save_EEPROM.ino**
 
 - array example  (sharing UD, INC pins, unique CS)
 - stereo example, (sharing all pins).
-- default true for select() / begin()?
 
 #### Could
+
+- default true for select() / begin()?
 
 #### Wont
 
