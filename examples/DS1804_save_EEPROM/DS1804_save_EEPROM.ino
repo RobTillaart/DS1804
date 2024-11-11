@@ -6,7 +6,11 @@
 #include "DS1804.h"
 
 //  adjust pins if needed
-DS1804 ds(5, 6, 7);
+const uint8_t CSPIN = 5;
+const uint8_t INCPIN = 6;
+const uint8_t UDPIN = 7;
+
+DS1804 ds(CSPIN, INCPIN, UDPIN);
 
 int value = 0;
 

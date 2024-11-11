@@ -19,7 +19,7 @@ Arduino library for DS1804 Nonvolatile Trimmer Potentiometer.
 **Experimental**
 
 The library implements a class for the DS1804 potentiometer.
-These devices come in 10K, 50 K and 100K and allows control in 100 steps.
+These devices come in 10K, 50K and 100K and allows control in 100 steps.
 
 The DS1804 has a simple pulse interface and cannot be read back
 so the library cannot provide the current position of the wiper.
@@ -29,16 +29,16 @@ and uses that as start position at power up.
 
 ### Power up / down
 
-(from datasheet)
+(from datasheet)  
 On power-up, wiper position will be loaded within a maximum time
 period of 500µs once the power-supply is stable. 
 Additionally, the three-terminal interface port will be active after 50 ms. 
 
-On power-down, the wiper position register data will be lost. 
+On power-down, the wiper position register data will be **lost**. 
 On the next device power-up, the value of
 EEPROM memory will be loaded into the wiper position register.
 
-There is no defined factory default, expect the value to be  random.
+There is no defined factory default, expect the value to be random.
 
 
 ### Related
