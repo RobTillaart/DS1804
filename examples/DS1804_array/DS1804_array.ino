@@ -23,7 +23,7 @@ DS1804 ds[3] =
   DS1804(CSPIN3, INCPIN, UDPIN)
 };
 
-int index = 0;
+int idx = 0;
 
 
 void setup()
@@ -51,33 +51,33 @@ void loop()
     int c = Serial.read();
     //  SELECT MODULE
     if (c == '0') {
-      index = 0;
+      idx = 0;
       ds[0].select(true);
       ds[1].select(false);
       ds[2].select(false);
     };
     if (c == '1') {
-      index = 1;
+      idx = 1;
       ds[0].select(false);
       ds[1].select(true);
       ds[2].select(false);
     };
     if (c == '2') {
-      index = 2;
+      idx = 2;
       ds[0].select(false);
       ds[1].select(false);
       ds[2].select(true);
     };
     //  DESELECT ALL
     if (c == '3') {
-      index = 0;
+      idx = 0;
       ds[0].select(false);
       ds[1].select(false);
       ds[2].select(false);
     };
     //  UP DOWN
-    if (c == 'U') ds[index].moveUp();
-    if (c == 'D') ds[index].moveDown();
+    if (c == 'U') ds[idx].moveUp();
+    if (c == 'D') ds[idx].moveDown();
   }
 }
 
